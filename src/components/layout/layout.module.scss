@@ -1,0 +1,10 @@
+@import 'src/assets/styles/variables';
+
+.layout {
+	min-height: 100vh;
+	display: flex;
+}
+
+.content {
+	padding: 110px 100px;
+}
