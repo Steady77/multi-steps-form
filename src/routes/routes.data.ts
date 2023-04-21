@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Home from '../components/screens/home/home';
+import CommonStep from '../components/screens/common-step/common-step';
 
 interface Routes {
 	path: string;
@@ -9,6 +9,22 @@ interface Routes {
 export const routes: Routes[] = [
 	{
 		path: '/',
-		component: Home,
+		component: CommonStep,
+	},
+	{
+		path: '/',
+		component: CommonStep,
+	},
+	{
+		path: '/',
+		component: CommonStep,
+	},
+	{
+		path: '/',
+		component: CommonStep,
+	},
+	{
+		path: '/',
+		component: CommonStep,
 	},
 ];
