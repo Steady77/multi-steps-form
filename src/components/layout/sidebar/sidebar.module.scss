@@ -1,7 +1,9 @@
 @import 'src/assets/styles/variables';
 
 .sidebar {
+	@include flex-center;
 	background: $gray-light-bg;
+	width: 500px;
 }
 
 .inner {

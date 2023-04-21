@@ -1,0 +1,73 @@
+@import 'src/assets/styles/variables';
+
+.item {
+	display: flex;
+	align-items: center;
+	position: relative;
+
+	&:not(:last-child) {
+		margin-bottom: 44px;
+	}
+
+	&:not(:last-child)::before {
+		content: '';
+		position: absolute;
+		width: 1px;
+		height: 44px;
+		background: $gray-bg;
+		bottom: -44px;
+		left: 21px;
+	}
+
+	&.active {
+		.circle {
+			background: $accent;
+			color: $white;
+			opacity: 1;
+		}
+
+		.text {
+			color: $black;
+			opacity: 1;
+		}
+	}
+
+	&.checked {
+		&::after {
+			content: 'L';
+			transform: scaleX(-1) rotate(-46deg);
+			color: $gray;
+			padding-bottom: 3px;
+		}
+
+		.circle {
+			background: #7daffd;
+			color: $white;
+			opacity: 1;
+		}
+
+		.text {
+			font-weight: 500;
+		}
+	}
+}
+
+.circle {
+	font-weight: 500;
+	font-size: 17px;
+	line-height: 21px;
+	width: 42px;
+	height: 42px;
+	background: $gray-bg;
+	border-radius: 50%;
+	color: rgba($black, 0.6);
+	opacity: 0.6;
+	@include flex-center;
+}
+
+.text {
+	font-weight: 400;
+	padding-right: 16px;
+	margin-left: 16px;
+	color: rgba($black, 0.6);
+}
