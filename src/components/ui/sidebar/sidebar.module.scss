@@ -1,0 +1,25 @@
+@import 'src/assets/styles/variables';
+
+.sidebar {
+	background: $gray-light-bg;
+}
+
+.inner {
+	max-width: 340px;
+}
+
+.title {
+	font-weight: 500;
+	font-size: 19px;
+	line-height: 23px;
+	color: $black;
+	margin-bottom: 20px;
+}
+
+.text {
+	font-weight: 300;
+	font-size: 17px;
+	line-height: 22px;
+	margin-bottom: 60px;
+	opacity: 0.5;
+}
