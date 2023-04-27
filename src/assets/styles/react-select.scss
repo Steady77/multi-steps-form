@@ -1,0 +1,70 @@
+@import 'src/assets/styles/variables';
+
+/* React Select */
+.custom-select {
+	&__control {
+		background-color: #fbfbfb !important;
+		border-radius: 7px;
+		border: 1px solid $grey-border !important;
+		box-shadow: none !important;
+
+		&--menu-is-open {
+			border-color: $grey-border !important;
+		}
+	}
+
+	&__value-container {
+		padding: 17px 20px !important;
+		cursor: text !important;
+	}
+
+	&__input-container {
+		color: $black !important;
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	&__indicator-separator {
+		display: none !important;
+	}
+
+	&__indicators {
+		cursor: pointer !important;
+	}
+
+	&__indicator {
+		color: #222222 !important;
+
+		&:hover {
+			color: #999aa5 !important;
+		}
+	}
+
+	&__menu {
+		color: $black !important;
+		margin: 0 !important;
+		box-shadow: none !important;
+		border: 1px solid $grey-border !important;
+	}
+
+	&__option {
+		cursor: pointer !important;
+		&--is-focused {
+			background-color: rgba(#4bb4e9, 0.05) !important;
+			color: #3e85fd !important;
+			border-radius: 7px 7px;
+		}
+
+		&--is-selected {
+			background-color: rgba(#4bb4e9, 0.05) !important;
+			color: $black !important;
+		}
+	}
+
+	&-container {
+		> div {
+			outline: none !important;
+			box-shadow: none !important;
+		}
+	}
+}
