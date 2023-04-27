@@ -1,0 +1,47 @@
+@import 'src/assets/styles/variables';
+
+.inputWrapper {
+	position: relative;
+}
+
+.input {
+	font-family: $default-font;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 18px;
+	color: $black;
+	background-color: $white;
+	outline: none;
+	border-radius: 7px;
+	border: 1px solid $grey-border;
+	padding: 17px 20px;
+	width: 334px;
+
+	&::placeholder {
+		font-family: $default-font;
+		font-weight: 400;
+		font-size: 15px;
+		line-height: 18px;
+		color: rgba($grey, 0.7);
+	}
+}
+
+.label {
+	display: block;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	color: rgba($black, 0.6);
+	margin-bottom: 12px;
+}
+
+.error {
+	position: absolute;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 18px;
+	top: 85px;
+	color: red;
+	width: 100%;
+	text-align: center;
+}
