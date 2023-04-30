@@ -1,0 +1,106 @@
+@import 'src/assets/styles/variables';
+
+.image {
+	margin-bottom: 40px;
+}
+
+.title {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	color: $black;
+	margin-bottom: 20px;
+}
+
+.text {
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 19px;
+	opacity: 0.5;
+	margin-bottom: 60px;
+}
+
+.form {
+	display: flex;
+	gap: 40px;
+	flex-wrap: wrap;
+	margin-bottom: 80px;
+
+	.bornPlace {
+		flex-grow: 1;
+
+		input {
+			width: 100%;
+		}
+	}
+
+	.radioBtn {
+		input {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip: rect(0 0 0 0);
+
+			&:checked + span {
+				border: 1px solid $accent-light;
+				color: $accent-light;
+
+				> svg {
+					path {
+						fill: $accent-light;
+					}
+				}
+			}
+		}
+
+		span {
+			border: 1px solid $grey-border;
+			border-radius: 7px;
+			padding: 16px 17px;
+			width: 74px;
+			height: 52px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			cursor: pointer;
+			font-weight: 400;
+			font-size: 15px;
+			line-height: 18px;
+			color: rgba($grey, 0.7);
+		}
+	}
+
+	.bornGenderBlock {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 334px;
+
+		.bornDate {
+			order: 1;
+			input {
+				width: 147px;
+			}
+		}
+
+		.gender {
+			display: flex;
+			width: 157px;
+			justify-content: space-between;
+
+			> div {
+				align-self: flex-end;
+
+				span {
+					height: 55px;
+				}
+			}
+		}
+	}
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-between;
+}
