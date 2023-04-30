@@ -2,8 +2,9 @@
 
 .sidebar {
 	@include flex-center;
-	background: $gray-light-bg;
+	background: $grey-light-bg;
 	width: 500px;
+	flex-shrink: 0;
 }
 
 .inner {

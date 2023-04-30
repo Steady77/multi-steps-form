@@ -14,7 +14,7 @@
 		position: absolute;
 		width: 1px;
 		height: 44px;
-		background: $gray-bg;
+		background: $grey-bg;
 		bottom: -44px;
 		left: 21px;
 	}
@@ -36,7 +36,7 @@
 		&::after {
 			content: 'L';
 			transform: scaleX(-1) rotate(-46deg);
-			color: $gray;
+			color: $grey;
 			padding-bottom: 3px;
 		}
 
@@ -58,7 +58,7 @@
 	line-height: 21px;
 	width: 42px;
 	height: 42px;
-	background: $gray-bg;
+	background: $grey-bg;
 	border-radius: 50%;
 	color: rgba($black, 0.6);
 	opacity: 0.6;
