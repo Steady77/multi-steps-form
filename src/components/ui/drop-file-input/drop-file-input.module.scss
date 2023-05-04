@@ -1,0 +1,83 @@
+@import 'src/assets/styles/variables';
+
+.inputWrap {
+	cursor: pointer;
+	position: relative;
+
+	.field {
+		display: flex;
+		position: relative;
+
+		.image {
+			background: $accent-light;
+			border-radius: 0 7px 7px 0;
+			width: 52px;
+			height: 54px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	.fieldText {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		width: 282px;
+		border: 1px dashed $grey-border;
+		border-right: none;
+		padding: 17px 20px;
+		color: rgba($grey, 0.7);
+		font-weight: 400;
+		font-size: 15px;
+		line-height: 18px;
+		border-radius: 7px 0 0 7px;
+		background: #fbfbfb;
+
+		&.dragActive {
+			border: 1px solid $accent-light;
+			border-right: none;
+		}
+	}
+
+	.fileName {
+		display: flex;
+		align-items: center;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		color: $accent-light;
+		position: absolute;
+		border: 1px dashed $grey-border;
+		background: #fbfbfb;
+		width: 334px;
+		border-radius: 7px;
+		padding: 15px 20px;
+		z-index: 1;
+
+		> span {
+			margin-left: 12px;
+			margin-right: auto;
+		}
+	}
+}
+
+.label {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	color: rgba($black, 0.6);
+	margin-bottom: 12px;
+}
+
+.error {
+	position: absolute;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 18px;
+	top: 85px;
+	color: red;
+	width: 100%;
+	text-align: center;
+}
