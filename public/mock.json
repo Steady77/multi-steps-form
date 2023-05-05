@@ -1,0 +1,37 @@
+[
+	{
+		"itn": "1111111111",
+		"fullCompanyName": "ООО «Рога и Копыта»",
+		"shortCompanynName": "ООО «РИК»",
+		"registerDate": "2020-02-23",
+		"psrn": "1111111111111"
+	},
+	{
+		"itn": "2222222222",
+		"fullCompanyName": "ООО «Строительная Компания»",
+		"shortCompanynName": "ООО «СК»",
+		"registerDate": "2021-05-10",
+		"psrn": "2222222222222"
+	},
+	{
+		"itn": "3333333333",
+		"fullCompanyName": "ООО «ПРОМСТРОЙРЕСУРС»",
+		"shortCompanynName": "ООО «ПСР»",
+		"registerDate": "2022-10-10",
+		"psrn": "3333333333333"
+	},
+	{
+		"itn": "4444444444",
+		"fullCompanyName": "ООО «СИНЕРГО ГРУПП»",
+		"shortCompanynName": "ООО «СГ»",
+		"registerDate": "2020-05-11",
+		"psrn": "4444444444444"
+	},
+	{
+		"itn": "5555555555",
+		"fullCompanyName": "ООО «Юнион Сервис Рус»",
+		"shortCompanynName": "ООО «ЮСР»",
+		"registerDate": "2021-11-11",
+		"psrn": "5555555555555"
+	}
+]
