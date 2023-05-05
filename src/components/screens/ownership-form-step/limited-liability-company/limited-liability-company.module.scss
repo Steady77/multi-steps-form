@@ -1,0 +1,42 @@
+.nameBlock {
+	display: flex;
+	gap: 40px;
+	margin-bottom: 40px;
+
+	.fullName {
+		input {
+			width: 511px;
+		}
+	}
+
+	.shortName {
+		input {
+			width: 157px;
+		}
+	}
+}
+
+.itnBlock {
+	display: flex;
+	gap: 30px;
+	margin-bottom: 40px;
+
+	.itnInput,
+	.registerDate {
+		input {
+			width: 157px;
+		}
+	}
+}
+
+.psrnBlock {
+	margin-bottom: 80px;
+	display: flex;
+	gap: 30px;
+
+	.psrnInput {
+		input {
+			width: 157px;
+		}
+	}
+}

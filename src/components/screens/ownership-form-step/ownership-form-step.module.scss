@@ -1,0 +1,13 @@
+@import 'src/assets/styles/variables';
+
+.form {
+	.selectWrapper {
+		width: 521px;
+		margin-bottom: 40px;
+	}
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-between;
+}
