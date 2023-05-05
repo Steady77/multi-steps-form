@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, MouseEvent, useEffect } from 'react';
 import Layout from '../../layout/layout';
 import styles from './common-step.module.scss';
 import icon from '../../../assets/images/common-form-icon.svg';
@@ -12,28 +12,51 @@ import { citizenshipOptions, cityOptions } from './common-step.data';
 import { CommonStepForm } from './common-step.interface';
 import { useNavigate } from 'react-router-dom';
 import { validText } from '../../../shared/regex';
+import { useFormsState } from '../../../hooks/use-forms-state';
+import FormHeader from '../../ui/form-header/form-header';
 
 const CommonStep: FC = () => {
 	const navigate = useNavigate();
+	const { formsState, setFormsState } = useFormsState();
 
 	const {
 		handleSubmit,
 		register,
 		formState: { errors },
 		control,
-	} = useForm<CommonStepForm>({ mode: 'onChange' });
+	} = useForm<CommonStepForm>({
+		mode: 'onChange',
+		defaultValues: formsState.common,
+	});
 
 	const onSubmit = (data: CommonStepForm) => {
-		console.log(data);
+		setFormsState((state) => ({
+			...state,
+			common: { ...data },
+			activeStep: state.activeStep + 1,
+		}));
 		navigate('/ownership-form');
 	};
+
+	const handleCancel = (e: MouseEvent<HTMLButtonElement>) => {
+		e.preventDefault();
+		alert('Отмена');
+	};
+
+	useEffect(() => {
+		window.addEventListener('popstate', (e) => {
+			e.preventDefault();
+		});
+	}, []);
 
 	return (
 		<Layout>
 			<section>
-				<img className={styles.image} src={icon} alt="icon" />
-				<h2 className={styles.title}>Общие</h2>
-				<p className={styles.text}>Введите свои персональные данные.</p>
+				<FormHeader
+					icon={icon}
+					title="Общие"
+					text="Введите свои персональные данные."
+				/>
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className={styles.form}>
 						<Input
@@ -72,38 +95,42 @@ const CommonStep: FC = () => {
 							placeholder="Сергеевич"
 							error={errors?.patronymic?.message}
 						/>
-						<Controller
-							name="city"
-							control={control}
-							rules={{
-								required: 'Выберите город',
-							}}
-							render={({ field, fieldState: { error } }) => (
-								<Select
-									options={cityOptions}
-									error={error}
-									field={field}
-									label="Основной город*"
-									placeholder="Санкт-Петербург"
-								/>
-							)}
-						/>
-						<Controller
-							name="citizenship"
-							control={control}
-							rules={{
-								required: 'Выберите гражданство',
-							}}
-							render={({ field, fieldState: { error } }) => (
-								<Select
-									options={citizenshipOptions}
-									error={error}
-									field={field}
-									label="Гражданство*"
-									placeholder="Россия"
-								/>
-							)}
-						/>
+						<div className={styles.selectWrapper}>
+							<Controller
+								name="city"
+								control={control}
+								rules={{
+									required: 'Выберите город',
+								}}
+								render={({ field, fieldState: { error } }) => (
+									<Select
+										options={cityOptions}
+										error={error}
+										field={field}
+										label="Основной город*"
+										placeholder="Выберите город"
+									/>
+								)}
+							/>
+						</div>
+						<div className={styles.selectWrapper}>
+							<Controller
+								name="citizenship"
+								control={control}
+								rules={{
+									required: 'Выберите гражданство',
+								}}
+								render={({ field, fieldState: { error } }) => (
+									<Select
+										options={citizenshipOptions}
+										error={error}
+										field={field}
+										label="Гражданство*"
+										placeholder="Выберите гражданство"
+									/>
+								)}
+							/>
+						</div>
 						<div className={styles.bornGenderBlock}>
 							<Input
 								{...register('birthday', {
@@ -120,7 +147,6 @@ const CommonStep: FC = () => {
 									label="Пол*"
 									type="radio"
 									value="male"
-									defaultChecked
 									className={styles.radioBtn}
 								>
 									<MaleIcon /> М
@@ -139,10 +165,6 @@ const CommonStep: FC = () => {
 						<Input
 							{...register('birthPlace', {
 								required: 'Введите место рождения',
-								pattern: {
-									value: validText(),
-									message: 'Только буквы',
-								},
 							})}
 							label="Место рождения (как указано в паспорте)*"
 							placeholder="Введите наименование региона и населенного пункта"
@@ -151,7 +173,7 @@ const CommonStep: FC = () => {
 						/>
 					</div>
 					<div className={styles.buttons}>
-						<Button variant="text" onClick={() => alert('Отмена')}>
+						<Button variant="text" onClick={handleCancel}>
 							Отмена
 						</Button>
 						<Button type="submit">Далее</Button>
