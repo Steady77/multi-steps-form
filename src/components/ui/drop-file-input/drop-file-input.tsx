@@ -14,6 +14,8 @@ interface FileInputProps {
 	onChange: (...event: any[]) => void;
 	onBlur: Noop;
 	accept: Accept;
+	value: any;
+	disabled?: boolean;
 }
 
 const DropFileInput: FC<FileInputProps> = ({
@@ -23,15 +25,18 @@ const DropFileInput: FC<FileInputProps> = ({
 	onChange,
 	onBlur,
 	accept,
+	value,
+	disabled,
 }) => {
 	return (
 		<Dropzone
+			disabled={disabled}
 			maxFiles={1}
 			maxSize={5_000_000}
 			accept={accept}
 			onDrop={onChange}
 		>
-			{({ getRootProps, getInputProps, isDragActive, acceptedFiles }) => (
+			{({ getRootProps, getInputProps, isDragActive }) => (
 				<div {...getRootProps()} className={cn(styles.inputWrap, className)}>
 					<p className={styles.label}>{label}</p>
 					<div className={styles.field}>
@@ -40,11 +45,11 @@ const DropFileInput: FC<FileInputProps> = ({
 								[styles.dragActive]: isDragActive,
 							})}
 						>
-							{acceptedFiles.length >= 1
-								? acceptedFiles.map(({ name }, idx) => (
+							{value
+								? value.map((item: any, idx: number) => (
 										<div className={styles.fileName} key={idx}>
 											<img src={done} alt="done" />
-											<span>{name}</span>
+											<span>{item.name}</span>
 											<img src={cross} alt="close" />
 										</div>
 								  ))
