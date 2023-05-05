@@ -1,25 +1,5 @@
 @import 'src/assets/styles/variables';
 
-.image {
-	margin-bottom: 40px;
-}
-
-.title {
-	font-weight: 500;
-	font-size: 18px;
-	line-height: 22px;
-	color: $black;
-	margin-bottom: 20px;
-}
-
-.text {
-	font-weight: 300;
-	font-size: 16px;
-	line-height: 19px;
-	opacity: 0.5;
-	margin-bottom: 60px;
-}
-
 .form {
 	display: flex;
 	gap: 40px;
@@ -79,6 +59,7 @@
 
 		.bornDate {
 			order: 1;
+
 			input {
 				width: 147px;
 			}
@@ -98,6 +79,10 @@
 			}
 		}
 	}
+}
+
+.selectWrapper {
+	width: 334px;
 }
 
 .buttons {
