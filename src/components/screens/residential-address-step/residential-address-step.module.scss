@@ -1,0 +1,44 @@
+.addressBlock {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px;
+	margin-bottom: 200px;
+
+	.selectWrapper {
+		width: 334px;
+	}
+}
+
+.checkbox {
+	margin-bottom: 40px;
+}
+
+.apartmentBlock {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	width: 334px;
+
+	.apartment,
+	.house {
+		input {
+			width: 72px;
+		}
+	}
+
+	.checkbox {
+		margin-top: 23px;
+		margin-bottom: 0;
+	}
+}
+
+.registerDate {
+	input {
+		width: 157px;
+	}
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-between;
+}

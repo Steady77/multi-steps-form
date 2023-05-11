@@ -3,17 +3,21 @@ import Layout from '../../layout/layout';
 import Button from '../../ui/button/button';
 import { useFormsState } from '../../../hooks/use-forms-state';
 import { useNavigate } from 'react-router-dom';
-import styles from './registr-address-step.module.scss';
+import styles from './residential-address-step.module.scss';
 import { Controller, useForm } from 'react-hook-form';
-import { RegisterAddressForm } from './registr-address-step.interface';
 import FormHeader from '../../ui/form-header/form-header';
 import icon from '../../../assets/images/registr-address-form-icon.svg';
 import Select from '../../ui/select/select';
-import { countryOptions, regionOptions } from './registr-address-step.data';
 import Input from '../../ui/input/input';
 import Checkbox from '../../ui/checkbox/checkbox';
+import {
+	countryOptions,
+	regionOptions,
+} from '../registr-address-step/registr-address-step.data';
+import { ResidentialAddressForm } from './residential-address-step.interface';
+import { getKeys } from '../../../shared/utils';
 
-const RegistrAddressStep: FC = () => {
+const ResidentialAddressStep: FC = () => {
 	const navigate = useNavigate();
 	const { formsState, setFormsState } = useFormsState();
 
@@ -21,16 +25,23 @@ const RegistrAddressStep: FC = () => {
 		handleSubmit,
 		control,
 		register,
-		formState: { errors },
 		getValues,
 		watch,
 		setValue,
-	} = useForm<RegisterAddressForm>({
+		formState: { errors },
+	} = useForm<ResidentialAddressForm>({
 		mode: 'onChange',
-		defaultValues: formsState.registrationAddress,
+		defaultValues: formsState.residentialAddress,
 	});
 
 	const isNoApartment = watch('noApartment');
+	const isAddressMatch = watch('addressIsMatch');
+
+	useEffect(() => {
+		getKeys(formsState.registrationAddress).forEach((key) => {
+			setValue(key, isAddressMatch ? formsState.registrationAddress[key] : '');
+		});
+	}, [isAddressMatch]);
 
 	useEffect(() => {
 		if (isNoApartment) {
@@ -39,14 +50,20 @@ const RegistrAddressStep: FC = () => {
 		}
 	}, [isNoApartment]);
 
-	const onSubmit = (data: RegisterAddressForm) => {
+	const onSubmit = (data: ResidentialAddressForm) => {
 		setFormsState((state) => ({
 			...state,
-			registrationAddress: { ...data },
-			activeStep: state.activeStep + 1,
+			residentialAddress: { ...data },
 		}));
 
-		navigate('/residential-address');
+		console.log({
+			common: { ...formsState.common },
+			ownership: { ...formsState.ownership },
+			registrationAddress: { ...formsState.registrationAddress },
+			residentialAddress: { ...data },
+		});
+
+		alert('JSON в консоли');
 	};
 
 	const prevStep = () => {
@@ -54,7 +71,7 @@ const RegistrAddressStep: FC = () => {
 			...state,
 			activeStep: state.activeStep - 1,
 		}));
-		navigate('/ownership-form');
+		navigate('/register-address');
 	};
 
 	const apartmentRequiredRule = (value: string | undefined) => {
@@ -67,10 +84,15 @@ const RegistrAddressStep: FC = () => {
 			<section>
 				<FormHeader
 					icon={icon}
-					title="Адрес регистрации"
-					text="Введите свой действуйющий адрес прописки."
+					title="Адрес проживания"
+					text="Введите свой действуйющий адрес проживания."
 				/>
 				<form onSubmit={handleSubmit(onSubmit)}>
+					<div className={styles.checkbox}>
+						<Checkbox {...register('addressIsMatch')}>
+							Адрес регистрации и фактического проживания совпадают
+						</Checkbox>
+					</div>
 					<div className={styles.addressBlock}>
 						<div className={styles.selectWrapper}>
 							<Controller
@@ -151,7 +173,7 @@ const RegistrAddressStep: FC = () => {
 								className={styles.apartment}
 							/>
 							<div className={styles.checkbox}>
-								<Checkbox {...register('noApartment')}>Нет квартиры</Checkbox>
+								<Checkbox {...register('noApartment')}>Нет договора</Checkbox>
 							</div>
 						</div>
 						<Input
@@ -168,7 +190,7 @@ const RegistrAddressStep: FC = () => {
 						<Button variant="text" onClick={prevStep}>
 							Назад
 						</Button>
-						<Button type="submit">Далее</Button>
+						<Button type="submit">Сохранить</Button>
 					</div>
 				</form>
 			</section>
@@ -176,4 +198,4 @@ const RegistrAddressStep: FC = () => {
 	);
 };
 
-export default RegistrAddressStep;
+export default ResidentialAddressStep;

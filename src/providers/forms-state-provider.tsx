@@ -36,6 +36,15 @@ const initialState: FormsState = {
 		apartmentRegistrDate: '',
 		street: '',
 	},
+	residentialAddress: {
+		country: '',
+		noApartment: false,
+		region: '',
+		registrationCity: '',
+		apartmentRegistrDate: '',
+		street: '',
+		addressIsMatch: false,
+	},
 };
 
 export const FormsStateContext = createContext<FormsContext>(
