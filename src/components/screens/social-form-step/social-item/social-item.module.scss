@@ -1,0 +1,24 @@
+.socialItem {
+	margin-bottom: 40px;
+	display: flex;
+	align-items: end;
+	position: relative;
+
+	.deleteIcon {
+		position: absolute;
+		cursor: pointer;
+		bottom: 21px;
+		right: 19px;
+	}
+
+	input {
+		width: 479px;
+		padding-right: 45px;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+
+	.selectWrapper {
+		width: 229px;
+	}
+}

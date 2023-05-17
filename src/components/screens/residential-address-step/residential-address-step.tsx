@@ -54,16 +54,10 @@ const ResidentialAddressStep: FC = () => {
 		setFormsState((state) => ({
 			...state,
 			residentialAddress: { ...data },
+			activeStep: state.activeStep + 1,
 		}));
 
-		console.log({
-			common: { ...formsState.common },
-			ownership: { ...formsState.ownership },
-			registrationAddress: { ...formsState.registrationAddress },
-			residentialAddress: { ...data },
-		});
-
-		alert('JSON в консоли');
+		navigate('/social-form');
 	};
 
 	const prevStep = () => {
@@ -190,7 +184,7 @@ const ResidentialAddressStep: FC = () => {
 						<Button variant="text" onClick={prevStep}>
 							Назад
 						</Button>
-						<Button type="submit">Сохранить</Button>
+						<Button type="submit">Далее</Button>
 					</div>
 				</form>
 			</section>

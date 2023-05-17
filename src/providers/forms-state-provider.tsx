@@ -45,6 +45,9 @@ const initialState: FormsState = {
 		street: '',
 		addressIsMatch: false,
 	},
+	socialMedia: {
+		social: [{ name: '', link: '' }],
+	},
 };
 
 export const FormsStateContext = createContext<FormsContext>(
