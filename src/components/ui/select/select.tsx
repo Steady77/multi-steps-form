@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import ReactSelect, { OnChangeValue } from 'react-select';
-import styles from './select.module.scss';
+
 import { Option, SelectProps } from './select.interface';
+import styles from './select.module.scss';
 
 const Select: FC<SelectProps> = ({
 	label,

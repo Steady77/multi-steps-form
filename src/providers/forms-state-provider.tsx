@@ -1,11 +1,12 @@
 import {
-	createContext,
-	useState,
+	Dispatch,
 	FC,
 	PropsWithChildren,
-	Dispatch,
 	SetStateAction,
+	createContext,
+	useState,
 } from 'react';
+
 import { FormsState } from '../shared/types/forms';
 
 interface FormsContext {

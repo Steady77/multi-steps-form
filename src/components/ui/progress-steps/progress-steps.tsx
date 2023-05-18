@@ -1,9 +1,11 @@
+import cn from 'classnames';
 import { FC } from 'react';
+import { useLocation } from 'react-router-dom';
+
+import { useFormsState } from '../../../hooks/use-forms-state';
+
 import { steps } from './progress-steps.data';
 import styles from './progress-steps.module.scss';
-import cn from 'classnames';
-import { useFormsState } from '../../../hooks/use-forms-state';
-import { useLocation } from 'react-router-dom';
 
 const ProgressSteps: FC = () => {
 	const { pathname } = useLocation();

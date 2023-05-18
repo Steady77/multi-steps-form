@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import styles from './social-item.module.scss';
 import {
 	Control,
 	Controller,
@@ -8,11 +7,16 @@ import {
 	UseFormRegister,
 	useWatch,
 } from 'react-hook-form';
-import Select from '../../../ui/select/select';
+
 import Input from '../../../ui/input/input';
+import Select from '../../../ui/select/select';
+
 import crossIcon from '../../../../assets/images/cross-icon.svg';
+
 import { socialOptions } from '../social-form-step.data';
 import { SocialForm } from '../social-form-step.interface';
+
+import styles from './social-item.module.scss';
 
 interface SocialItemProps {
 	control: Control<SocialForm>;

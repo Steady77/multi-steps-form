@@ -1,18 +1,23 @@
 import { FC } from 'react';
-import Layout from '../../layout/layout';
-import styles from './ownership-form-step.module.scss';
-import Button from '../../ui/button/button';
-import { useNavigate } from 'react-router-dom';
 import { Controller, useForm } from 'react-hook-form';
-import icon from '../../../assets/images/ownership-form-icon.svg';
-import { useFormsState } from '../../../hooks/use-forms-state';
+import { useNavigate } from 'react-router-dom';
+
+import Button from '../../ui/button/button';
+import FormHeader from '../../ui/form-header/form-header';
 import Select from '../../ui/select/select';
+
+import { useAutocomplete } from '../../../hooks/use-autocomplete';
+import { useFormsState } from '../../../hooks/use-forms-state';
+
+import icon from '../../../assets/images/ownership-form-icon.svg';
+
+import Layout from '../../layout/layout';
+
+import LimitedLiabilityCompany from './limited-liability-company/limited-liability-company';
 import { activityOptions } from './ownership-form-step.data';
 import { OwnershipStepForm } from './ownership-form-step.interface';
-import LimitedLiabilityCompany from './limited-liability-company/limited-liability-company';
+import styles from './ownership-form-step.module.scss';
 import SoleTrader from './sole-trader/sole-trader';
-import FormHeader from '../../ui/form-header/form-header';
-import { useAutocomplete } from '../../../hooks/use-autocomplete';
 
 const OwnershipFormStep: FC = () => {
 	const navigate = useNavigate();

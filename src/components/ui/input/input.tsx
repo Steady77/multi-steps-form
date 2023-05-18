@@ -1,6 +1,7 @@
-import { forwardRef, InputHTMLAttributes } from 'react';
-import styles from './input.module.scss';
 import cn from 'classnames';
+import { InputHTMLAttributes, forwardRef } from 'react';
+
+import styles from './input.module.scss';
 
 interface InputType extends InputHTMLAttributes<HTMLInputElement> {
 	error?: string;

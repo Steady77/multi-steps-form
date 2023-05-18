@@ -1,11 +1,14 @@
-import { FC } from 'react';
-import styles from './drop-file-input.module.scss';
 import cn from 'classnames';
+import { FC } from 'react';
 import Dropzone, { Accept } from 'react-dropzone';
-import UploadIcon from '../icons/upload-icon';
 import { Noop } from 'react-hook-form';
+
 import cross from '../../../assets/images/cross-icon.svg';
 import done from '../../../assets/images/✓.svg';
+
+import UploadIcon from '../icons/upload-icon';
+
+import styles from './drop-file-input.module.scss';
 
 interface FileInputProps {
 	label: string;

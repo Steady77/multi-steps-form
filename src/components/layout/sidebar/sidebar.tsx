@@ -1,6 +1,8 @@
 import { FC } from 'react';
-import styles from './sidebar.module.scss';
+
 import ProgressSteps from '../../ui/progress-steps/progress-steps';
+
+import styles from './sidebar.module.scss';
 
 const Sidebar: FC = () => {
 	return (

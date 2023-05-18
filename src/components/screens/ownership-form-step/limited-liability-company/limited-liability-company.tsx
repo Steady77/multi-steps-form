@@ -5,11 +5,14 @@ import {
 	FieldErrors,
 	UseFormRegister,
 } from 'react-hook-form';
-import { OwnershipStepForm } from '../ownership-form-step.interface';
-import styles from './limited-liability-company.module.scss';
-import { validNubmer } from '../../../../shared/regex';
-import Input from '../../../ui/input/input';
+
 import DropFileInput from '../../../ui/drop-file-input/drop-file-input';
+import Input from '../../../ui/input/input';
+
+import { validNubmer } from '../../../../shared/regex';
+import { OwnershipStepForm } from '../ownership-form-step.interface';
+
+import styles from './limited-liability-company.module.scss';
 
 interface LLCProps {
 	control: Control<OwnershipStepForm>;

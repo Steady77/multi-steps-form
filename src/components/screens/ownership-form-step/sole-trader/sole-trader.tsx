@@ -1,6 +1,4 @@
 import { FC, useEffect } from 'react';
-import styles from './sole-trader.module.scss';
-import Input from '../../../ui/input/input';
 import {
 	Control,
 	Controller,
@@ -10,10 +8,15 @@ import {
 	UseFormSetValue,
 	UseFormWatch,
 } from 'react-hook-form';
-import { OwnershipStepForm } from '../ownership-form-step.interface';
-import { validNubmer } from '../../../../shared/regex';
-import DropFileInput from '../../../ui/drop-file-input/drop-file-input';
+
 import Checkbox from '../../../ui/checkbox/checkbox';
+import DropFileInput from '../../../ui/drop-file-input/drop-file-input';
+import Input from '../../../ui/input/input';
+
+import { validNubmer } from '../../../../shared/regex';
+import { OwnershipStepForm } from '../ownership-form-step.interface';
+
+import styles from './sole-trader.module.scss';
 
 interface SoleTraderProps {
 	control: Control<OwnershipStepForm>;

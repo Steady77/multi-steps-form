@@ -1,14 +1,19 @@
 import { FC, MouseEvent } from 'react';
-import styles from './social-form-step.module.scss';
 import { useFieldArray, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { useFormsState } from '../../../hooks/use-forms-state';
+
 import Button from '../../ui/button/button';
-import Layout from '../../layout/layout';
 import FormHeader from '../../ui/form-header/form-header';
-import icon from '../../../assets/images/social-form-icon.svg';
+
+import { useFormsState } from '../../../hooks/use-forms-state';
+
 import plusIcon from '../../../assets/images/plus-icon.svg';
+import icon from '../../../assets/images/social-form-icon.svg';
+
+import Layout from '../../layout/layout';
+
 import { SocialForm } from './social-form-step.interface';
+import styles from './social-form-step.module.scss';
 import SocialItem from './social-item/social-item';
 
 const SocialFormStep: FC = () => {
