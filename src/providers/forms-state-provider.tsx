@@ -7,7 +7,7 @@ import {
 	useState,
 } from 'react';
 
-import { FormsState } from '../shared/types/forms';
+import { FormsState } from '@/shared/types/forms';
 
 interface FormsContext {
 	formsState: FormsState;

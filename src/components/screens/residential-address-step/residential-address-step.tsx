@@ -2,17 +2,16 @@ import { FC, useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
-import Button from '../../ui/button/button';
-import Checkbox from '../../ui/checkbox/checkbox';
-import FormHeader from '../../ui/form-header/form-header';
-import Input from '../../ui/input/input';
-import Select from '../../ui/select/select';
+import Button from '@/ui/button/button';
+import Checkbox from '@/ui/checkbox/checkbox';
+import FormHeader from '@/ui/form-header/form-header';
+import Input from '@/ui/input/input';
+import Select from '@/ui/select/select';
 
-import { useFormsState } from '../../../hooks/use-forms-state';
+import { useFormsState } from '@/hooks/use-forms-state';
 
-import icon from '../../../assets/images/registr-address-form-icon.svg';
+import icon from '@/assets/images/registr-address-form-icon.svg';
 
-import { getKeys } from '../../../shared/utils';
 import Layout from '../../layout/layout';
 import {
 	countryOptions,
@@ -21,6 +20,7 @@ import {
 
 import { ResidentialAddressForm } from './residential-address-step.interface';
 import styles from './residential-address-step.module.scss';
+import { getKeys } from '@/shared/utils';
 
 const ResidentialAddressStep: FC = () => {
 	const navigate = useNavigate();

@@ -2,14 +2,14 @@ import { FC } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
-import Button from '../../ui/button/button';
-import FormHeader from '../../ui/form-header/form-header';
-import Select from '../../ui/select/select';
+import Button from '@/ui/button/button';
+import FormHeader from '@/ui/form-header/form-header';
+import Select from '@/ui/select/select';
 
-import { useAutocomplete } from '../../../hooks/use-autocomplete';
-import { useFormsState } from '../../../hooks/use-forms-state';
+import { useAutocomplete } from '@/hooks/use-autocomplete';
+import { useFormsState } from '@/hooks/use-forms-state';
 
-import icon from '../../../assets/images/ownership-form-icon.svg';
+import icon from '@/assets/images/ownership-form-icon.svg';
 
 import Layout from '../../layout/layout';
 

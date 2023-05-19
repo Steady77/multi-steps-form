@@ -9,14 +9,14 @@ import {
 	UseFormWatch,
 } from 'react-hook-form';
 
-import Checkbox from '../../../ui/checkbox/checkbox';
-import DropFileInput from '../../../ui/drop-file-input/drop-file-input';
-import Input from '../../../ui/input/input';
+import Checkbox from '@/ui/checkbox/checkbox';
+import DropFileInput from '@/ui/drop-file-input/drop-file-input';
+import Input from '@/ui/input/input';
 
-import { validNubmer } from '../../../../shared/regex';
 import { OwnershipStepForm } from '../ownership-form-step.interface';
 
 import styles from './sole-trader.module.scss';
+import { validNubmer } from '@/shared/regex';
 
 interface SoleTraderProps {
 	control: Control<OwnershipStepForm>;

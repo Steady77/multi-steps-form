@@ -1,12 +1,11 @@
 import { useEffect } from 'react';
 import { UseFormSetValue } from 'react-hook-form';
 
-import { OwnershipStepForm } from '../components/screens/ownership-form-step/ownership-form-step.interface';
-
-import { CompanyData } from '../shared/types/company';
-import { fetchData, getKeys } from '../shared/utils';
+import { OwnershipStepForm } from '@/components/screens/ownership-form-step/ownership-form-step.interface';
 
 import { useDebounce } from './use-debounce';
+import { CompanyData } from '@/shared/types/company';
+import { fetchData, getKeys } from '@/shared/utils';
 
 export const useAutocomplete = (
 	setValue: UseFormSetValue<OwnershipStepForm>,

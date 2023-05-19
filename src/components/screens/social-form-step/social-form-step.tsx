@@ -2,13 +2,13 @@ import { FC, MouseEvent } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
-import Button from '../../ui/button/button';
-import FormHeader from '../../ui/form-header/form-header';
+import Button from '@/ui/button/button';
+import FormHeader from '@/ui/form-header/form-header';
 
-import { useFormsState } from '../../../hooks/use-forms-state';
+import { useFormsState } from '@/hooks/use-forms-state';
 
-import plusIcon from '../../../assets/images/plus-icon.svg';
-import icon from '../../../assets/images/social-form-icon.svg';
+import plusIcon from '@/assets/images/plus-icon.svg';
+import icon from '@/assets/images/social-form-icon.svg';
 
 import Layout from '../../layout/layout';
 

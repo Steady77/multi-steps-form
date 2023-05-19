@@ -2,23 +2,23 @@ import { FC, MouseEvent, useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
-import Button from '../../ui/button/button';
-import FormHeader from '../../ui/form-header/form-header';
-import FemaleIcon from '../../ui/icons/female-icon';
-import MaleIcon from '../../ui/icons/male-icon';
-import Input from '../../ui/input/input';
-import Select from '../../ui/select/select';
+import Button from '@/ui/button/button';
+import FormHeader from '@/ui/form-header/form-header';
+import FemaleIcon from '@/ui/icons/female-icon';
+import MaleIcon from '@/ui/icons/male-icon';
+import Input from '@/ui/input/input';
+import Select from '@/ui/select/select';
 
-import { useFormsState } from '../../../hooks/use-forms-state';
+import { useFormsState } from '@/hooks/use-forms-state';
 
-import icon from '../../../assets/images/common-form-icon.svg';
+import icon from '@/assets/images/common-form-icon.svg';
 
-import { validText } from '../../../shared/regex';
 import Layout from '../../layout/layout';
 
 import { citizenshipOptions, cityOptions } from './common-step.data';
 import { CommonStepForm } from './common-step.interface';
 import styles from './common-step.module.scss';
+import { validText } from '@/shared/regex';
 
 const CommonStep: FC = () => {
 	const navigate = useNavigate();
